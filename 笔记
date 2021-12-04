@@ -1,0 +1,76 @@
+struct S
+{   int n;
+   float score;
+   char arr[10];
+}
+int main()
+{
+	struct S s = { 100,2.5f,"bitkeji" };
+	FILE* pf = fopen("test.txt", "w");
+	if (pf == NULL)
+	{
+		return 0;
+	}
+	fprinf(pf, "%d", "%f", "%s", s.n, s.score, n.arr);
+		
+	//fscanf(stdin,"%d,%f %s",&(s.n),&(s.scrore),&(s.arr));
+		
+	fclose(pf);
+	pf = NULL;
+	return 0;
+	//scanf pirntf 是针对表你准输入流标准输出流的格式化输入输出语句
+	//fscanf fprintf 是针对所有输入流输出流的格式化输出语句
+	//sscanf sprintf 是从字符串中读取格式化的数据，吧格式化的数据输出成存储到字符串
+
+}
+struct S
+{
+	char name[20];
+	int age;
+	double score;
+};
+int main()
+{
+	struct S s { "张四十三"，20，90.1 };
+		FILE* pf=fopen("test.txt","wb");
+		if (pf = NULL)
+		{
+			return 0;
+		}
+		fwrite(&s,sizeof(struct S),1,pf);
+		fclose(pf);
+		pf = NULL;
+	    return 0;
+}
+int main()
+{
+	FILE* pf = fopen("test.txt", "r");
+	if (pf = NULL);
+	{
+		return 0;
+	}
+	//定位文件指针
+	//读取文件
+	fseek(pf, 2, SEEK_CUR);//负数表示向前偏移
+	//随机读取
+	int ch = fgetc(pf);
+	fclose(pf);
+	pf = NULL;
+	return 0;
+	//feof();文件结束标志
+}
+int main()
+{
+	//streeor-把错误码对应的错误信息的字符串地址返回
+//printf("%%s\n",strerror(errno));
+	//perror
+	FILE* pf = fopen("test.txt", "r");
+	if (pf == NULL)
+	{
+		perror("hehe");
+		return 0;
+	}
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
